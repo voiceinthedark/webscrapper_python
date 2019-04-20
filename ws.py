@@ -4,7 +4,15 @@ from bs4 import BeautifulSoup
 
 
 class WebScrapper:
-    """Web scrapper class."""
+    """Web scrapper class.
+    Contains the following methods:
+    __init__: the class constructor
+    _captureurl: private method called from the constructor that capture
+        the url argument passed to the constructor and checks for ok response
+    checkstatus: method to check the url response code
+    captureselector: main class method that capture a css selector by type
+    savereport: this method will save the data scrapped into a file on HD
+    print2screen: Method that prints the data output to the console"""
 
     def __init__(self, link):
         """Constructor, accepts a link to url to scrap.
@@ -13,7 +21,7 @@ class WebScrapper:
         link: the url link that need to be scrapped
         response: the response of the url link
         links: initiailize empty list to collect the scrapped data"""
-        
+
         self.link = link
         self.response = self._captureurl(link)
         self.links = []
