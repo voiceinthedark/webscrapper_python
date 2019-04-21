@@ -26,12 +26,17 @@ class WebScrapper:
         self.response = self._captureurl(link)
         self.links = []
 
-    def _captureurl(self, link):
+    def __captureurl(self, link):
+        """Capture the url with the requests module and check for connection
+        errors"""
+
         self.res = requests.get(self.link,)
         self.res.raise_for_status()
         return self.res
 
     def checkstatus(self):
+        """Check the response connection status"""
+
         print(self.response)
 
     def captureselector(self, selector='a'):
