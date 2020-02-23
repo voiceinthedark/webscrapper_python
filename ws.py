@@ -23,7 +23,7 @@ class WebScrapper:
         links: initiailize empty list to collect the scrapped data"""
 
         self.link = link
-        self.response = self._captureurl(link)
+        self.response = self.__captureurl(link)
         self.links = []
 
     def __captureurl(self, link):
